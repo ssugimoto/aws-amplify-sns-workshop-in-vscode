@@ -1,0 +1,17 @@
+version: "3"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #working_dir: /workspaces
+    #working_dir: /hostdir   
+    volumes:
+      - ../:/hostdir
+      - ../ssh:/root/.ssh
+      #- ${localEnv:HOME}${localEnv:USERPROFILE}/.ssh :/root/.ssh # Error, env setttings NG.
+      - ../aws:/root/.aws
+    ports:
+      - "3000:3000"
+      - "20002:20002"
+    command: /bin/sh -c "while sleep 2000; do :; done" # container exit stop.
