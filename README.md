@@ -21,13 +21,24 @@ We've created and tested this repo on/for macOS, but it also could work on Windo
 ### Repository
 
 ```shell
-.
-├── .devcontainer          <- Configs for the 'Remote - Containers' extension
-├── .gitignore
 ├── copy-boyaki-to-host.sh <- See the "Note" below
 ├── LICENSE
-└── README.md              <- You're reading this file right now :)
+├── README.md                 ;this file
+├── .gitignore
+│
+├─.devcontainer
+│      devcontainer.json     ; <- Configs for the 'Remote - Containers' extension. change. use dockerComposeFile, Amplify-cli Version 5.1.0
+│      docker-compose.yml    ; add. dockerfile, port,volumes,command setting
+│      Dockerfile            ; change. node version 14, 
+│
+├─aws
+│      readme.md             ;see file. Japanese Only
+│
+└─ssh
+       readme.md             ;see file. Japanese Only  
 ```
+
+
 
 ### In the remote container
 
@@ -49,13 +60,13 @@ We've created and tested this repo on/for macOS, but it also could work on Windo
 
 #### via `.devcontainer/Dockerfile`
 
-- Node.js v12.x
+- Node.js v14.x
 - AWS CLI v2.x
 - Amazon Corretto 8 (OpenJDK 1.8.x) _for the "Amplify Mocking" feature_
 
 #### via `.devcontainer/devcontainer.json`
 
-- AWS Amplify CLI 4.16.1
+- AWS Amplify CLI 5.1.0
 
 ### 2. Default configurations
 
